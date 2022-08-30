@@ -1,3 +1,61 @@
+<?php
+	// Message Vars
+	$msg = '';
+	$msgClass = '';
+
+	// Check For Submit
+	if(filter_has_var(INPUT_POST, 'submit')){
+		// Get Form Data
+		$name = htmlspecialchars($_POST['name']);
+		$email = htmlspecialchars($_POST['email']);
+		$message = htmlspecialchars($_POST['message']);
+
+		// Check Required Fields
+		if(!empty($email) && !empty($name) && !empty($message)){
+			// Passed
+			// Check Email
+			if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+				// Failed
+				$msg = 'Please use a valid email';
+				$msgClass = 'alert-danger';
+			} else {
+				// Passed
+				$toEmail = 'tvdimple@gmail.com';
+				$subject = 'Contact Request From '.$name;
+				$body = '<h2>Contact Request</h2>
+					<h4>Name</h4><p>'.$name.'</p>
+					<h4>Email</h4><p>'.$email.'</p>
+					<h4>Message</h4><p>'.$message.'</p>
+				';
+
+				// Email Headers
+				$headers = "MIME-Version: 1.0" ."\r\n";
+				$headers .="Content-Type:text/html;charset=UTF-8" . "\r\n";
+
+				// Additional Headers
+				$headers .= "From: " .$name. "<".$email.">". "\r\n";
+
+				if(mail($toEmail, $subject, $body, $headers)){
+					// Email Sent
+					$msg = 'Your email has been sent';
+					$msgClass = 'alert-success';
+				} else {
+					// Failed
+					$msg = 'Your email was not sent';
+					$msgClass = 'alert-danger';
+				}
+			}
+		} else {
+			// Failed
+			$msg = 'Please fill in all fields';
+			$msgClass = 'alert-danger';
+		}
+	}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,9 +77,11 @@
 
     <body>
         <header>
-            <img src="img/banner1.jpg">
-        </header>
+            <div class="container">
+                <img src="img/banner1.jpg">
         
+            </div>
+        </header>
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
@@ -46,7 +106,7 @@
                         </ul>
                     </li>
                         <li><a href="office.html">Office Bearers</a></li>
-                         <li class="active"><a href="contact.html">Contact</a></li>
+                         <li class="active"><a href="contact.php">Contact</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>    
@@ -79,57 +139,59 @@
               <div class="col-md-12">
                 <h1 class="page-header" style="margin-top: 5px; font-size: 25px;">Our Church Location</h1>
                   <p style="margin-top: 0;"><strong>Address :   St. John's Indian  Orthodox Church</strong><br /> </p>
-                  <p style="margin-left: 65px;font-weight: 600">   4400 State Road<br /></p>
-                  <p style="margin-left: 65px; font-weight: 600 "> Drexel Hill,<br /></p>
-                  <p style="margin-left: 65px; font-weight: 600 ">  PA 19026, USA</p>
-                  <p style="margin-left: 65px; font-weight: 600">Email: <a href="mailto:trusteesjioc@outlook.com">trusteesjioc@outlook.com</a></p>
-                  <p style="margin-left: 65px; font-weight: 600">Website: <a href="https://sjioc.org">https://sjioc.org</a></p>
+                  <p style="margin-left: 65px;">   4400 State Road<br /></p>
+                  <p style="margin-left: 65px;"> Drexel Hill,<br /></p>
+                  <p style="margin-left: 65px;">  PA 19026, USA</p>
+                  <p style="margin-left: 65px;">Email : trusteesjioc@outlook.com</p>
               </div>
-                <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.581704612705!2d-75.31183818525395!3d39.95074529177246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c191067dae21%3A0xdcd6ffa74f3a50d5!2s4400%20State%20Rd%2C%20Drexel%20Hill%2C%20PA%2019026!5e0!3m2!1sen!2sus!4v1576949356083!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></p>
+                <p ><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.581704612705!2d-75.31183818525395!3d39.95074529177246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c191067dae21%3A0xdcd6ffa74f3a50d5!2s4400%20State%20Rd%2C%20Drexel%20Hill%2C%20PA%2019026!5e0!3m2!1sen!2sus!4v1576949356083!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></p>
         
                 </div>
               </div>
-            <br/>
-            <br/>
-            
             <div class="col-md-9">
-                <form class="contact-form"  style="float: right;" id="iform">
+                <?php if($msg != ''): ?>
+    		<div class="alert <?php echo $msgClass; ?>"><?php echo $msg; ?></div>
+    	<?php endif; ?>
+                 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<!--                <form class="contact-form" action="contactform.php" method="post" style="float: right;" id="iform">-->
                 <div class="form-group row">
                     
                       <label for="name" class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-10">
-                      <input type="text" name="name" class="form-control" id="name" style="width: 400px;" placeholder="Name">
+                      <input type="text" name="name" class="form-control" value="<?php echo isset($_POST['name']) ? $name : '' ?>" style="width: 400px;" placeholder="Name">
                     </div>
                 </div>
                     <div class="form-group row">
                       <label for="email" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
-                      <input type="email" name="mail" class="form-control" id="email" style="width: 400px;" placeholder="Your Email">
+                      <input type="email" name="email" class="form-control" value="<?php echo isset($_POST['email']) ? $email : '' ?>" style="width: 400px;" placeholder="Your Email">
                     </div>
                 </div>
                         
               <div class="form-group row">
                 <label for="subject" class="col-sm-2 col-form-label">Subject</label>
                   <div class="col-sm-10">
-                <input type="text" class="form-control" name="subject" placeholder="Your subject" style="width: 400px;">
+                <input type="text" class="form-control" name="subject" value="<?php echo isset($_POST['subject']) ? $subject : ''?>" placeholder="Your subject" style="width: 400px;">
               </div>
                 </div>
               <div class="form-group row">
                 <label for="message" class="col-sm-2 col-form-label">Your Message</label>
                   <div class="col-sm-10">
-                    <textarea class="form-control" name="message" rows="3" style="width: 400px; background-color: white;"></textarea>
+                    <textarea class="form-control" name="message"  rows="3" style="width: 400px; background-color: white;"><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
               </div>
-                </div>
+                    </div>
+                
+                
               
               <div class="form-group">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="emailcheck" >
+                  <input class="form-check-input" type="checkbox" id="emailcheck">
                   <label class="form-check-label" for="emailcheck">
                     Email a copy of this message to your own address
                   </label>
                 </div>
               </div>
-              <button type="submit" name="submit" class="btn btn-primary" style="margin-left: 250px;" id="submitbutton">Submit</button>
+              <button type="submit" name="submit" class="btn btn-primary" style="margin-left: 250px;">Submit</button>
         </form>
           </div>  
             
@@ -156,8 +218,8 @@
                 </div>
                 <div class="col-md-6" id="right-footer">
                     <p>Address: 4400 State Road,<br />
-                       Drexel Hill, PA 19026, USA       <br />       Email: <a href="mailto:trusteesjioc@outlook.com">trusteesjioc@outlook.com</a><br />
-                       Website: <a href="https://sjioc.org">https://sjioc.org</a></p>
+                       Drexel Hill,PA 19026, USA       <br />            Email: trusteesjioc@outlook.com<br />
+                       Website: https://sjioc.org</p>
 
 <!--                    <p>Copyright &copy; 2019, All Rights Reserved</p>    -->
                 </div>
@@ -171,7 +233,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
-
+<!--    <script src="js/script.js"></script>        -->
     </body>
 </html>
 

@@ -1,0 +1,578 @@
+body{
+    background-image: url(../img/paper.png);
+/*    background-color: #D9D9F3	;*/
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header{
+/*	background-image: linear-gradient(#04519b, #044687 60%, #033769);*/
+	color:#fff;
+	min-height:50px;
+/*	padding-top:25px;*/
+    margin: 0;
+/*    width: 100%;*/
+}
+header img{
+        width: 100%;
+    }
+/*
+nav {
+  height : 50px;
+  background : #3a87ad;
+  width : 100%;
+  margin : 0;
+  position : fixed;
+  font-family : 'Roboto', sans-serif;
+  font-size : 20px;
+  display : flex;
+  justify-content : space-between;
+  padding : 0 50px 0 0;
+  box-sizing : border-box;
+  z-index : 100;
+}
+nav a{
+    padding: 0 32px;
+    color: #eee;
+    transition: 0.4s;
+    
+}
+nav a:hover{
+    text-decoration: none;
+    color: black;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+}
+.active{
+    color: black;
+}
+#menu-icon{
+    height: 100%;
+    font-size: 28px;
+    padding: 0 4px;
+    color: #eee;
+    display: none;
+    align-items: center;
+}
+*/
+/*Slideout Menu*/
+/*
+#slideout-menu{
+    display: none;
+    background: #2d3436;
+    z-index: 100;
+*/
+/*    position: fixed;*/
+/*
+    transition: 0.4s;
+    margin-top: 72px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+}
+#slideout-menu ul{
+    list-style: none;
+    padding: 0 32px;
+}
+#slideout-menu ul li{
+     padding: 8px;
+}
+#slideout-menu a{
+    font-family : 'Roboto Condensed', sans-serif;
+    font-size : 20px;
+    color: white;
+}
+#slideout-menu input{
+    width: 85%;
+    padding: 8px;
+    font-family : 'Roboto Condensed', sans-serif;
+    font-size : 20px;
+    text-align: center;
+}
+*/
+
+/*
+header{
+    margin-left: -105px;
+    padding: 0;
+    width: 100%;
+}
+
+header{
+	background-image: url(../img/BAND1.jpg) no-repeat;
+    
+	color:#fff;
+    width: 100%;
+	min-height:100px;
+	padding-top:25px;
+    margin: 0;
+    padding: 0;
+    background-attachment: cover;
+}
+*/
+/*
+header .logo{
+    margin: 0;
+    padding: 0;
+    height: 15px;
+	float:left;
+}
+*/
+/*
+.navbar{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #0048BA;
+}
+.nav li{
+    color: #fff;
+    font-size: 17px;
+    margin-left: 50px;
+    margin-right: 25px;
+    padding: 10px 0;
+    text-align: justify;
+}
+*/
+
+/*
+.col-md-4{
+    margin: 0;
+    padding: 2px 2px;
+    border: 1px solid #ccc;
+}
+*/
+/*
+#heading h2{
+    margin: 0; 
+    padding: 0;
+    background: #741211;
+    color: #fff;
+}
+*/
+/*
+.navbar-brand{
+    display: none;
+}
+.dropdown-menu{
+    padding: 2px;
+    font-size: 13px;
+}
+.dropdown-menu ul li{
+    height: 10px;
+    padding : 2px 2px 2px 2px;
+}
+*/
+section{
+	margin:20px 0 30px 0;
+}
+
+#carousel-example-generic{
+    height: 300px;
+    width: 650px;
+    margin-right: 45px;
+    
+}
+
+#message{
+/*    margin-left: 10px;*/
+    
+/*    padding: 2px;*/
+    border: 1px solid black;
+    background-color: #D9D9F3;
+    box-shadow: 0 10px 6px -6px #777;
+}
+#message img{
+/*
+    height:200px;
+    width:200px;
+*/
+    margin-bottom: 20px;
+}
+/*
+.vmessage{
+	position:relative;
+	width:580px;
+	min-height:65px;
+	padding:10px;
+	background:#D9D9F3;
+}
+*/
+.vmessage p{
+    float: right;
+    font-size: 15px;
+}
+/*
+.vmessage:after{
+	content:'';
+	position:absolute;
+	border-style:solid;
+	border-width:15px 15px 15px 0;
+	border-color:transparent #fff;
+	display:block;
+	width:0;
+	z-index:1;
+	margin-top:-15px;
+	left:-15px;
+	top:50%;
+}
+
+.vmessage:before{
+	content:'';
+	position:absolute;
+	border-style:solid;
+	border-width:15px 15px 15px 0;
+	border-color:transparent #ccc;
+	display:block;
+	width:0;
+	z-index:0;
+	margin-top:-15px;
+	left:-16px;
+	top:50%;
+}
+*/
+
+#birthday {
+    
+    margin-left: 10px;
+    margin-right: 2px;
+    height: 300px;
+    width: 350px;
+    font: black;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: #D9D9F3;
+/*    background-color: white;*/
+    box-shadow: 0 10px 6px -6px #777;
+}
+/*
+#birthday h3{
+    
+    margin-left: 70px;
+}
+*/
+#birthday p{
+    margin-left: 10px;
+    padding-left: 10px;
+    font-weight: 400;
+}
+#holysynod{
+    float: right;
+/*    margin-left: 8px;*/
+    height: 300px;
+    width: 350px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: #D9D9F3;
+    box-shadow: 0 10px 6px -6px #777;
+}
+
+/*
+.panel-body{
+    background-color: #D9D9F3;
+    
+}
+*/
+.panel-heading{
+	background-image: linear-gradient(#04519b, #044687 60%, #033769);
+	color:#fff !important;
+}
+.worship{
+    border: 1px solid black;
+/*    border-radius: 5px;*/
+    font-size: 15px;
+    box-shadow: 0 10px 6px -6px #777;
+}
+.worship p{
+    margin-left: 10px;
+}
+.announcements{
+/*  margin-left: 10px;  */
+    border: 1px solid black;
+/*    border-radius: 15px;*/
+    font-size: 15px;
+    box-shadow: 0 10px 6px -6px #777;
+}
+/*
+#calendar-container{
+    padding: 10px;
+    width: 210px;
+    height: 240px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial;
+    background-image: linear-gradient(#fff, #d3d3d3);
+}
+
+#calendar-container>div{
+    padding: 0;
+    margin-right 10px;
+}
+
+#calendar-month-year{
+    margin: 0px;
+}
+
+#calendar-dates>table>tr>td{
+    padding: 5px;
+}
+*/
+#calender{
+    border: 1px solid black;
+    font-size: 15px;
+        background-color: #D9D9F3;
+    box-shadow: 0 10px 6px -6px #777;
+}
+/*
+.col-md-4{
+    display: flex;
+    padding-left: 40px;
+    border: 1px solid black;
+}
+*/
+
+/*
+footer{
+	background:#f4f4f4;
+	height:90px;
+	color:#04519b;
+	font-weight: bold;
+	text-align: center;
+	padding-top:40px;
+	margin-top:30px;
+	border-top:7px solid #04519b;
+}
+*/
+#hcontent{
+    font-family: 'Roboto', sans-serif;
+    text-align: justify-all;
+}
+h1{
+    margin-left: 65px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    text-decoration: underline;
+}
+
+ol{
+   margin-left: 65px; 
+/*    background-color: #D9D9F3;*/
+}
+ol li {
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+/*    background-color: #D9D9F3;*/
+}
+.carol, .picnic, .activities, .library{
+    border: 2px solid blue;
+}
+#oheading h1{
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-top: 5px;
+}
+#oheading p{
+    line-height: 0;
+    text-align: justify;
+}
+#content h3{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    margin-top: 5px;
+    
+}
+footer{
+    background-color:  #0077b5;
+    
+    color: #fff;
+    padding: 20px 0 20px 0;
+}
+footer li{
+    float: left;
+    margin: 0;
+    padding: 0 10px 0 10px;
+    list-style: none;
+}
+footer a{
+    color: #fff;
+}
+footer p{
+    float: right;
+}
+footer a:hover{
+/*    background-color: #0077b5;*/
+    color: white;
+}
+
+/*Media Queries*/
+@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 400px){
+/*
+  header {
+    width: 30%;
+  }
+*/
+    header img{
+        width: 100%;
+    }
+    #birthday{
+        margin-top: 10px;
+        width: 100%;
+    }
+    #holysynod{
+        margin-top: 10px;
+        width: 100%;
+        float: left;
+    }
+    #holysynod h3{
+        float: left;
+    }
+    #left-footer{
+        margin: 0;
+        float: left;
+    }
+    #right-footer{
+        margin: 0;
+        float: left;
+    }
+    #rphoto{
+        float: left;
+    }
+    .col-md-9 #iform{
+        float: left;
+    }
+    #hphoto h3{
+        float: left;
+    }
+    #hphoto img{
+        margin-left: 20px;
+    }
+}
+
+
+
+@media screen and (max-width: 600px){
+/*
+  header {
+    width: 30%;
+  }
+*/
+    header img{
+        width: 100%;
+    }
+    #birthday{
+        margin-top: 10px;
+        width: 100%;
+    }
+    #holysynod{
+        margin-top: 10px;
+        width: 100%;
+        float: left;
+    }
+    #holysynod h3{
+        float: left;
+    }
+    #left-footer{
+        margin: 0;
+        float: left;
+    }
+    #right-footer{
+        margin: 0;
+        float: left;
+    }
+    #rphoto{
+        float: left;
+    }
+    .col-md-9 #iform{
+        float: left;
+    }
+    #hphoto h3{
+        float: left;
+    }
+    #hphoto img{
+        margin-left: 40px;
+        margin-top: 10px;
+    }
+    #hcontent p{
+        margin-left: 10px;
+        text-align: left;
+    }
+    table{
+        table-layout: auto; 
+    }
+    #oheading h1{
+        margin-top: 10px;
+    }
+    p iframe{
+        width: 100%;
+    }
+    .btn{
+        float: left;
+    }
+}
+
+@media screen and (max-width: 768px){
+/*
+  header {
+    width: 30%;
+  }
+*/
+    header img{
+        width: 100%;
+    }
+    #birthday{
+        margin-top: 10px;
+        width: 80%;
+    }
+    #holysynod{
+        margin-top: 10px;
+        width: 80%;
+        float: left;
+    }
+    #holysynod h3{
+        float: center;
+    }
+    #holysynod img{
+        float: center;
+        margin-left: 30px;
+/*        width: 70%;*/
+    }
+    #left-footer{
+        margin: 0;
+        float: left;
+    }
+    #right-footer{
+        margin: 0;
+        float: left;
+    }
+    #rphoto{
+        float: left;
+    }
+    .col-md-9 #iform{
+        float: left;
+    }
+    #hphoto h3{
+        font-size: 8px;
+    }
+}
+
